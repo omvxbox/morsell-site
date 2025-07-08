@@ -1,0 +1,180 @@
+/* line 1, _elements.tabs.scss */
+.tabs {
+  --tabs-padding-x: 15px;
+  --tabs-height: 42px; }
+  /* line 4, _elements.tabs.scss */
+  .tabs__list {
+    font-size: 16px;
+    line-height: 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 0 0 20px; }
+    @media (max-width: 1024px) {
+      /* line 10, _elements.tabs.scss */
+      .tabs__list.is-scrollable {
+        flex-wrap: nowrap;
+        white-space: nowrap;
+        overflow: auto hidden;
+        padding: 0 20px;
+        margin: 0 -20px 20px;
+        scrollbar-width: none;
+        -ms-overflow-style: none; } }
+    @media (max-width: 767px) {
+      /* line 10, _elements.tabs.scss */
+      .tabs__list.is-scrollable {
+        padding: 0 10px;
+        margin: 0 -10px 20px; } }
+    /* line 24, _elements.tabs.scss */
+    .tabs__list.is-scrollable::-webkit-scrollbar {
+      display: none;
+      width: 0 !important; }
+  /* line 30, _elements.tabs.scss */
+  .tabs__item {
+    display: flex;
+    align-items: center;
+    gap: 0 10px;
+    height: var(--tabs-height);
+    padding: 0 var(--tabs-padding-x);
+    color: var(--color-black);
+    background-color: var(--bg-grey);
+    border-radius: var(--radius);
+    border: none;
+    cursor: pointer; }
+    /* line 41, _elements.tabs.scss */
+    .tabs__item.is-active {
+      color: var(--color-white);
+      background: var(--color-secondary); }
+    @media (hover: hover), all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      /* line 30, _elements.tabs.scss */
+      .tabs__item {
+        transition: color 0.2s ease, background-color 0.2s ease; } }
+    @media (hover: none) {
+      /* line 30, _elements.tabs.scss */
+      .tabs__item {
+        -webkit-tap-highlight-color: transparent; } }
+    @media (hover: hover), all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      /* line 25, _mixins.scss */
+      .tabs__item:hover {
+        color: var(--color-white);
+        background-color: var(--color-secondary); } }
+    /* line 52, _elements.tabs.scss */
+    .tabs__item .svg-icon {
+      min-width: auto;
+      height: 1.333em; }
+  /* line 57, _elements.tabs.scss */
+  .tabs__content {
+    display: none; }
+    /* line 59, _elements.tabs.scss */
+    .tabs__content.is-active {
+      display: block; }
+  /* line 63, _elements.tabs.scss */
+  .tabs__all-products {
+    margin: 20px 0 0;
+    display: flex;
+    justify-content: center; }
+    /* line 67, _elements.tabs.scss */
+    .tabs__all-products .button {
+      max-width: 380px; }
+  /* line 72, _elements.tabs.scss */
+  .tabs_type_product-info {
+    --tabs-height: 34px; }
+    /* line 75, _elements.tabs.scss */
+    .tabs_type_product-info .tabs__list {
+      font-size: 14px;
+      line-height: 18px;
+      justify-content: center; }
+
+/* line 1, _elements.faq.scss */
+.faq-page {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 40px;
+  align-items: start; }
+  @media (max-width: 1024px) {
+    /* line 1, _elements.faq.scss */
+    .faq-page {
+      grid-template-columns: 1fr; } }
+  /* line 9, _elements.faq.scss */
+  .faq-page .tabs, .faq-page .faq {
+    min-width: 0; }
+
+/* line 14, _elements.faq.scss */
+.faq {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 -20px; }
+  /* line 19, _elements.faq.scss */
+  .faq__item + .faq__item {
+    border-top: 1px solid var(--border-grey); }
+  /* line 24, _elements.faq.scss */
+  .faq__item.is-open .faq__title {
+    color: var(--color-secondary); }
+    /* line 27, _elements.faq.scss */
+    .faq__item.is-open .faq__title .svg-icon[data-icon="plus"] {
+      transform: rotate(225deg); }
+  /* line 35, _elements.faq.scss */
+  .faq__title {
+    font-size: 16px;
+    line-height: 20px;
+    position: relative;
+    padding: 20px 36px 20px 0;
+    cursor: pointer;
+    transition: color 0.2s ease; }
+    /* line 41, _elements.faq.scss */
+    .faq__title .svg-icon {
+      position: absolute;
+      right: 0;
+      top: 22px;
+      width: 1em;
+      height: 1em;
+      color: var(--color-grey-l);
+      transition: transform 0.4s ease; }
+      /* line 49, _elements.faq.scss */
+      .faq__title .svg-icon[data-icon="plus"] {
+        opacity: 1;
+        transform: rotate(0); }
+    @media (hover: none) {
+      /* line 35, _elements.faq.scss */
+      .faq__title {
+        -webkit-tap-highlight-color: transparent; } }
+    @media (hover: hover), all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      /* line 25, _mixins.scss */
+      .faq__title:hover {
+        color: var(--color-secondary); } }
+  /* line 58, _elements.faq.scss */
+  .faq__content {
+    display: none; }
+    /* line 60, _elements.faq.scss */
+    .faq__content .text {
+      padding-bottom: 20px; }
+
+/* line 66, _elements.faq.scss */
+.faq-form {
+  padding: 20px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-s);
+  display: flex;
+  gap: 20px;
+  flex-direction: column; }
+  /* line 73, _elements.faq.scss */
+  .faq-form__title {
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: var(--font-normal); }
+  /* line 77, _elements.faq.scss */
+  .faq-form__description {
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--color-grey-d); }
+  /* line 81, _elements.faq.scss */
+  .faq-form__button {
+    white-space: nowrap; }
+    @media (min-width: 1025px) {
+      /* line 83, _elements.faq.scss */
+      .faq-form__button .button {
+        width: 100%; } }
+    @media (max-width: 575px) {
+      /* line 83, _elements.faq.scss */
+      .faq-form__button .button {
+        width: 100%; } }
